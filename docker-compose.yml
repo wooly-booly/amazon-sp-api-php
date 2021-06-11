@@ -1,0 +1,19 @@
+version: '3'
+services:
+    web:
+        image: nginx:latest
+        restart: unless-stopped
+        ports:
+            - 8091:80
+        volumes_from:
+            - app
+        volumes:
+            - ./docker/nginx/conf/sp-api.conf:/etc/nginx/conf.d/default.conf
+        working_dir: /var/www/sp-api
+        links:
+            - app
+    app:
+        build: ./docker/php-fpm/
+        restart: unless-stopped
+        volumes:
+            - ./:/var/www/sp-api

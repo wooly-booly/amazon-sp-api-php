@@ -1,0 +1,11 @@
+<?php
+
+return [
+    'refresh_token' => '',
+    'client_id' => '',
+    'client_secret' => '',
+    'region' => \ClouSale\AmazonSellingPartnerAPI\SellingPartnerRegion::$NORTH_AMERICA,
+    'access_key' => '',
+    'secret_key' => '',
+    'endpoint' => '',
+];
